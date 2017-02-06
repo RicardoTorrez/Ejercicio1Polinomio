@@ -47,15 +47,15 @@ public class lista {
 			System.out.println(" ");
 		}
 		
-			public void simplificar(lista lista2){
 			
-			nodo aux= lista2.getInicio();
-			nodo aux2= aux.getSiguiente();
-			nodo anterior= aux;
+		public void simplificarlistas(lista lista){
+				
+			nodo aux= lista.getInicio();
+		
 			while(aux!=null){
 				
-				aux2=aux.getSiguiente();
-				anterior= aux;
+				nodo aux2=aux.getSiguiente();
+				nodo anterior= aux;
 				
 				Integer comodin = (aux.getDato().getCoeficiente());
 				while(aux2!=null){
@@ -77,8 +77,6 @@ public class lista {
 							
 				aux=aux.getSiguiente();
 			}
-			
-			
 		}
 
 		public void suma(lista lista1, lista lista2){
