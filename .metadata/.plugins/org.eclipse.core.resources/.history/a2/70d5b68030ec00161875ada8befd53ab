@@ -1,0 +1,26 @@
+
+public class monomio {
+	Integer coeficiente, exponente;
+	
+	public monomio(){
+		this.coeficiente= coeficiente;
+		this.exponente= exponente;
+	}
+	
+	public int getCoeficiente() {
+		return coeficiente;
+	}
+
+	public void setCoeficiente(Integer coeficiente) {
+		this.coeficiente = coeficiente;
+	}
+
+	public int getExponente() {
+		return exponente;
+	}
+
+	public void setExponente(Integer exponente) {
+		this.exponente = exponente;
+	}
+
+}

@@ -18,6 +18,10 @@ public class lista {
 			return inicio== null;
 		}
 		
+		public boolean isListavacia3(){
+			return inicio== null;
+		}
+		
 
 		public void insertar(monomio monomio){
 			nodo nuevo= new nodo(monomio);
@@ -220,6 +224,68 @@ public class lista {
 			}
 			
 			System.out.println(" ");
+			
+		}
+		
+		public void multiplicacion(lista lista1, lista lista2){
+			nodo aux= lista1.getInicio();
+			
+			lista lista3 = new lista();
+			
+			if(isListavacia1(lista1)){
+				System.out.println("no hay primer polinomio");
+			}else{
+				if(isListavacia2(lista2)){
+					System.out.println("no hay segundo polinomio");
+				}else{
+					while(aux!=null){
+						
+						nodo aux2= lista2.getInicio();
+						
+						while(aux2!=null){
+							
+							monomio monomioaux = new monomio();			
+						
+							
+							monomioaux.setCoeficiente(monomioaux.getCoeficiente() * aux2.getDato().getCoeficiente());
+							monomioaux.setExponente(monomioaux.getExponente() + aux2.getDato().getExponente());
+							
+							Integer coeficiente= monomioaux.getCoeficiente();
+							Integer exponente= monomioaux.getExponente();
+							
+							
+							if (isListavacia3()){
+								inicio= nuevo;
+							}else{
+								nodo auxiliar= inicio;
+								
+								while(auxiliar.getSiguiente()!=null){
+									auxiliar=auxiliar.getSiguiente();
+								}
+								
+							
+								auxiliar.setSiguiente(nuevo);
+							}
+							
+							aux2= aux2.getSiguiente();
+							
+						}
+						
+						aux= aux.getSiguiente();
+					}
+					
+					nodo auxi= lista3.getInicio();
+					
+					while(auxi!=null){
+						System.out.printf(auxi.getDato().getCoeficiente() + "x^" + auxi.getDato().getExponente() + " " );
+						
+						auxi= auxi.getSiguiente();
+					}
+					System.out.println(" ");
+					
+
+				}
+			}
 			
 		}
 		

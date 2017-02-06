@@ -7,6 +7,10 @@ public class monomio {
 		this.exponente= exponente;
 	}
 	
+	public monomio() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getCoeficiente() {
 		return coeficiente;
 	}
