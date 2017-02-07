@@ -38,7 +38,7 @@ public class insertar {
 		lista2.recorrer();
 		lista1.simplificarlistas(lista1);
 		lista2.simplificarlistas(lista2);	
-		System.out.println("SIMPLIFICACION");
+		System.out.println("simplificacion");
 		
 		System.out.println("Polinomio 1");
 		lista1.recorrer();

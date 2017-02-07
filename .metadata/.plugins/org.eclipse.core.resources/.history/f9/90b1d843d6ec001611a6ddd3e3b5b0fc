@@ -232,44 +232,38 @@ public class lista {
 		}
 		
 		public void multiplicacion(lista lista1, lista lista2){
-
-			
 			nodo aux= lista1.getInicio();
 			
 			lista lista3 = new lista();
 			
 			if(isListavacia1(lista1)){
-				System.out.println("NO ENTRA");
 				System.out.println("no hay primer polinomio");
 			}else{
 				if(isListavacia2(lista2)){
-					System.out.println("NO ENTRA 2");
 					System.out.println("no hay segundo polinomio");
 				}else{
 					while(aux!=null){
-					
 						
 						nodo aux2= lista2.getInicio();
 						
-						
-						
 						while(aux2!=null){
+							
 							monomio monomioaux = new monomio();			
-					
+						
+							
 							monomioaux.setCoeficiente(aux.getDato().getCoeficiente() * aux2.getDato().getCoeficiente());
 							monomioaux.setExponente(aux.getDato().getExponente() + aux2.getDato().getExponente());
-					
+							
 							Integer coeficiente= monomioaux.getCoeficiente();
 							Integer exponente= monomioaux.getExponente();
-					
+							
 							lista3.insertar(coeficiente, exponente);
-							aux2= aux2.getSiguiente();
-					
+							aux2.getSiguiente();
+							
 						}
 						
 						aux= aux.getSiguiente();
 					}
-					lista3.simplificarlistas(lista3);
 					
 					nodo auxi= lista3.getInicio();
 					

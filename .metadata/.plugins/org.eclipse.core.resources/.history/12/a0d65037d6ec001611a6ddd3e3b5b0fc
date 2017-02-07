@@ -48,7 +48,7 @@ public class insertar {
 		
 		//lista1.resta(lista1, lista2);
 		
-		lista1.multiplicacion(lista1, lista2);
+		//lista1.multiplicacion(lista1, lista2);
 	}
 
 	
