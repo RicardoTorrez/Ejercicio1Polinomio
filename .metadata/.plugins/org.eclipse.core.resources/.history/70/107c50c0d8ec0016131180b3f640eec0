@@ -136,11 +136,14 @@ public class lista {
 				aux=aux.getSiguiente();
 			}
 			
-		
+			nodo aux3= inicio;
 
 			System.out.println("Resultado de la suma");
-				
-			lista1.recorrer();
+			while(aux3!=null){
+				System.out.printf(aux3.getDato().getCoeficiente() + "x^" + aux3.getDato().getExponente() + " ");
+				aux3= aux3.getSiguiente();
+			}
+			
 			System.out.println(" ");
 		}
 		
@@ -216,10 +219,14 @@ public class lista {
 				aux3=aux3.getSiguiente();
 			}
 			
-	
+			nodo aux7= inicio;
 
 			System.out.println("Resultado de la resta");
-			lista1.recorrer();			
+			while(aux7!=null){
+				System.out.printf(aux7.getDato().getCoeficiente() + "x^" + aux7.getDato().getExponente() + " ");
+				aux7= aux7.getSiguiente();
+			}
+			
 			System.out.println(" ");
 			
 		}

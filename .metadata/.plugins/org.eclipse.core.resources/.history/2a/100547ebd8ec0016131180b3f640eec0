@@ -44,9 +44,9 @@ public class insertar {
 		lista1.recorrer();
 		System.out.println("Polinomio 2");
 		lista2.recorrer();
-		//lista1.suma(lista1, lista2);
+		lista1.suma(lista1, lista2);
 		
-		lista1.resta(lista1, lista2);
+		//lista1.resta(lista1, lista2);
 		
 		//lista1.multiplicacion(lista1, lista2);
 	}
