@@ -305,7 +305,14 @@ public class lista {
 
 		}
 		
-		public void divisionResiduo(lista lista1, lista lista2){
+		/**
+		 * Division por el metodo de ruffini
+		 * Si el divisor es un binomio de la forma x — a,
+		 * entonces utilizamos un método más breve para hacer la división, 
+		 * llamado regla de Ruffini.
+		 */
+		
+		public void divisionRuffini(lista lista1, lista lista2){
 			
 			
 			lista1.ordenarPolinomio();
@@ -390,6 +397,182 @@ public class lista {
 			lista3.recorrer();
 			System.out.println("Residuo=" + auxi.getDato().getCoeficiente());
 		}
+		
+		
+		/**
+		 * Division por el metodo normal de polinomios
+		 * 
+		 * 		 
+		 * */
+		
+		public void division(lista lista1, lista lista2){
+			
+			lista lista3= new lista();
+			
+			lista1.ordenarPolinomio();
+			lista2.ordenarPolinomio();
+			
+			nodo aux= lista1.getInicio();
+			nodo aux2= lista2.getInicio();
+			nodo aux3= lista3.getInicio();
+
+			
+			
+			
+			if(isListavacia1(lista1)){
+				System.out.println("NO ENTRA");
+				System.out.println("no hay primer polinomio");
+			}else{
+					if(isListavacia2(lista2)){
+					System.out.println("NO ENTRA 2");
+					System.out.println("no hay segundo polinomio");
+					}else{
+						  while(aux.getDato().getExponente() >= aux2.getDato().getExponente()){
+							 	  
+									monomio monomioaux = new monomio();			
+									
+									monomioaux.setCoeficiente(aux.getDato().getCoeficiente() / aux2.getDato().getCoeficiente());
+									monomioaux.setExponente(aux.getDato().getExponente() - aux2.getDato().getExponente());
+							
+									Integer coeficiente= monomioaux.getCoeficiente();
+									Integer exponente= monomioaux.getExponente();
+							
+									lista3.insertar(coeficiente, exponente);
+									
+
+									lista lista4= new lista();
+									nodo aux4= lista4.getInicio();
+									
+									while(aux2!=null){
+										monomio monomioaux1= new monomio();
+										
+										monomioaux1.setCoeficiente(aux2.getDato().getCoeficiente()* coeficiente);
+										monomioaux1.setExponente(aux2.getDato().getExponente() + exponente);
+										
+										Integer coeficiente1= monomioaux1.getCoeficiente();
+										Integer exponente1= monomioaux1.getExponente();
+								
+										lista4.insertar(coeficiente1, exponente1);
+										aux2= aux2.getSiguiente();
+									}
+									
+									lista4.ordenarPolinomio();
+									
+									while(aux!=null){
+										Integer comodin = null;
+										
+										aux4=lista4.getInicio();
+										
+										while(aux4!=null){
+											if(aux.getDato().getExponente()== aux4.getDato().getExponente()){
+												
+												comodin= aux.getDato().getCoeficiente() - aux4.getDato().getCoeficiente();
+												
+												aux.getDato().setCoeficiente(comodin);
+												
+												aux4= aux4.getSiguiente();
+											}else{
+												aux4= aux4.getSiguiente();
+											}
+										}
+										
+										aux= aux.getSiguiente();
+									}
+									
+									
+									aux= lista1.getInicio();
+									aux2=lista2.getInicio();
+										
+									
+									if(aux.getDato().getCoeficiente()==0){
+										inicio=aux.getSiguiente();
+										aux.setSiguiente(null);
+										aux=inicio;
+									}					
+						  }
+						  System.out.println("resto");
+						  lista1.recorrer();
+						  System.out.println("coeficiente");
+						  
+						  lista3.recorrer();
+					}
+			}
+		}
+		
+		
+		public void resolverMetodoRuffini(lista lista1){
+			
+			lista1.ordenarPolinomio();
+			
+			lista lista4 = new lista();
+			
+			
+
+			for(Integer i=-10; i<=10; i++){
+				
+				nodo aux= lista1.getInicio();
+				
+				lista lista3 = new lista();
+				
+				Integer comodin2 = aux.getDato().getCoeficiente();
+				
+				Integer comodin3 = aux.getDato().getExponente() -1; 
+				
+				monomio monomioaux = new monomio();			
+				
+				monomioaux.setCoeficiente(comodin2);
+				monomioaux.setExponente(comodin3);
+		
+				Integer coeficiente= monomioaux.getCoeficiente();
+				Integer exponente= monomioaux.getExponente();
+		
+				lista3.insertar(coeficiente, exponente);
+				aux= aux.getSiguiente();
+				
+				comodin2= 0;
+				comodin3=0;
+				
+				
+				nodo auxiliar = lista3.getInicio();
+					while(aux!=null){
+	
+					Integer comodin4 = ((aux.getDato().getCoeficiente()) + (auxiliar.getDato().getCoeficiente()* i));
+					
+					Integer comodin5 = aux.getDato().getExponente() -1; 
+					
+					monomio monomioaux1 = new monomio();			
+					
+					monomioaux1.setCoeficiente(comodin4);
+					monomioaux1.setExponente(comodin5);
+			
+					Integer coeficiente1= monomioaux1.getCoeficiente();
+					Integer exponente1= monomioaux1.getExponente();
+			
+					lista3.insertar(coeficiente1, exponente1);
+					aux= aux.getSiguiente();
+					auxiliar = auxiliar.getSiguiente();	
+
+					}
+					
+					if(auxiliar.getDato().getCoeficiente()==0){
+						Integer comodin5 = i;
+						Integer comodin6 = 0;
+						lista4.insertar(comodin5, comodin6);	
+						
+					}
+			
+			}
+		
+		nodo aux= lista4.getInicio();
+		
+		while(aux!=null){
+
+			System.out.println(aux.getDato().getCoeficiente());
+			
+			aux= aux.getSiguiente();
+		}
+			
+}
 		
 		
 		public nodo getInicio() {

@@ -1,0 +1,491 @@
+
+public class lista {
+		private nodo inicio;
+		
+		public lista(){
+			inicio=null;
+		}
+		
+		public boolean isListavacia(){
+			return inicio == null;
+		}
+		
+		public boolean isListavacia1(lista lista){
+			return inicio== null;
+		}
+	
+		public boolean isListavacia2(lista lista2){
+			return inicio== null;
+		}
+		
+		public boolean isListavacia3(){
+			return inicio== null;
+		}
+		
+
+		public void insertar(Integer coeficiente, Integer exponente){
+			monomio mono= new monomio();
+			mono.setCoeficiente(coeficiente);
+			mono.setExponente(exponente);
+			
+			nodo nuevo= new nodo(mono);
+			
+			if (isListavacia()){
+				inicio= nuevo;
+			}else{
+				nodo aux= inicio;
+				
+				while(aux.getSiguiente()!=null){
+					aux=aux.getSiguiente();
+				}
+				
+				aux.setSiguiente(nuevo);
+			}
+			
+		}
+
+		public void recorrer(){
+			nodo aux= inicio;
+			
+			while(aux!=null){
+				System.out.printf(aux.getDato().getCoeficiente() + "x^" + aux.getDato().getExponente() + " " );
+				
+				aux= aux.getSiguiente();
+			}
+			System.out.println(" ");
+		}
+		
+			
+		public void simplificarlistas(lista lista){
+				
+			nodo aux= lista.getInicio();
+		
+			while(aux!=null){
+				
+				nodo aux2=aux.getSiguiente();
+				nodo anterior= aux;
+				
+				Integer comodin = (aux.getDato().getCoeficiente());
+				while(aux2!=null){
+					
+					if(aux.getDato().getExponente()== aux2.getDato().getExponente()){
+						comodin += (aux2.getDato().getCoeficiente());
+						
+						anterior.setSiguiente(aux2.getSiguiente());
+						aux2.setSiguiente(null);
+						aux2=anterior.getSiguiente();
+					} else{
+
+						aux2=aux2.getSiguiente();
+						anterior= anterior.getSiguiente();
+					}
+				}
+				
+				aux.getDato().setCoeficiente(comodin);
+							
+				aux=aux.getSiguiente();
+			}
+		}
+
+		public void suma(lista lista1, lista lista2){
+			
+			nodo aux5= lista1.getInicio();
+			if(isListavacia1(lista1)){
+				System.out.println("no hay lista uno");
+			}else{
+
+				System.out.println("  ");
+				
+				while(aux5.getSiguiente()!=null){
+					aux5=aux5.getSiguiente();
+				}
+				
+				nodo ultimo= aux5;
+				
+				ultimo.setSiguiente(lista2.getInicio());			
+			}
+			
+			
+			nodo aux= lista1.getInicio();
+			nodo aux2= aux.getSiguiente();
+			nodo anterior= aux;
+			lista lista3= new lista();
+			while(aux!=null){
+				
+				aux2=aux.getSiguiente();
+				anterior= aux;
+				
+				Integer comodin = (aux.getDato().getCoeficiente());
+				while(aux2!=null){
+					
+					if(aux.getDato().getExponente()== aux2.getDato().getExponente()){
+						comodin += (aux2.getDato().getCoeficiente());
+						
+						anterior.setSiguiente(aux2.getSiguiente());
+						aux2.setSiguiente(null);
+						aux2=anterior.getSiguiente();
+					} else{
+
+						aux2=aux2.getSiguiente();
+						anterior= anterior.getSiguiente();
+					}
+				}
+				
+				aux.getDato().setCoeficiente(comodin);
+							
+				aux=aux.getSiguiente();
+			}
+			
+		
+
+			System.out.println("Resultado de la suma");
+				
+			lista1.recorrer();
+			System.out.println(" ");
+		}
+		
+		public void resta(lista lista1, lista lista2){
+			
+			nodo ini= lista2.getInicio();
+
+			nodo aux5= lista1.getInicio();
+			
+			nodo aux2=ini;
+			
+			if(ini==null){
+				System.out.println("no hay segundo polinomio");
+			}else{
+				
+				while(aux2!=null){
+					
+					Integer comodin = (aux2.getDato().getCoeficiente());
+					
+					comodin =(comodin)*(-1);
+					
+					aux2.getDato().setCoeficiente(comodin);
+					
+					aux2= aux2.getSiguiente();
+				}		
+							
+			}
+			
+			
+			if(isListavacia1(lista1)){
+				System.out.println("no hay primer polinomio");
+			}else{
+
+				System.out.println("  ");
+				
+				while(aux5.getSiguiente()!=null){
+					aux5=aux5.getSiguiente();
+				}
+				
+				nodo ultimo= aux5;
+				
+				ultimo.setSiguiente(lista2.getInicio());			
+			}		
+			
+			
+			nodo aux3= lista1.getInicio();
+			nodo aux4= aux3.getSiguiente();
+			nodo anterior= aux3;
+			
+			while(aux3!=null){
+				
+				aux4=aux3.getSiguiente();
+				anterior= aux3;
+				
+				Integer comodin = (aux3.getDato().getCoeficiente());
+				while(aux4!=null){
+					
+					if(aux3.getDato().getExponente()== aux4.getDato().getExponente()){
+						comodin += (aux4.getDato().getCoeficiente());
+						
+						anterior.setSiguiente(aux4.getSiguiente());
+						aux4.setSiguiente(null);
+						aux4=anterior.getSiguiente();
+					} else{
+
+						aux4=aux4.getSiguiente();
+						anterior= anterior.getSiguiente();
+					}
+				}
+				
+				aux3.getDato().setCoeficiente(comodin);
+							
+				aux3=aux3.getSiguiente();
+			}
+			
+	
+
+			System.out.println("Resultado de la resta");
+			lista1.recorrer();			
+			System.out.println(" ");
+			
+		}
+		
+		public void multiplicacion(lista lista1, lista lista2){
+
+			
+			nodo aux= lista1.getInicio();
+			
+			lista lista3 = new lista();
+			
+			if(isListavacia1(lista1)){
+				System.out.println("NO ENTRA");
+				System.out.println("no hay primer polinomio");
+			}else{
+				if(isListavacia2(lista2)){
+					System.out.println("NO ENTRA 2");
+					System.out.println("no hay segundo polinomio");
+				}else{
+					while(aux!=null){
+					
+						
+						nodo aux2= lista2.getInicio();
+						
+						
+						
+						while(aux2!=null){
+							monomio monomioaux = new monomio();			
+					
+							monomioaux.setCoeficiente(aux.getDato().getCoeficiente() * aux2.getDato().getCoeficiente());
+							monomioaux.setExponente(aux.getDato().getExponente() + aux2.getDato().getExponente());
+					
+							Integer coeficiente= monomioaux.getCoeficiente();
+							Integer exponente= monomioaux.getExponente();
+					
+							lista3.insertar(coeficiente, exponente);
+							aux2= aux2.getSiguiente();
+					
+						}
+						
+						aux= aux.getSiguiente();
+					}
+					lista3.simplificarlistas(lista3);
+					System.out.println("Resultado de multiplicacion");
+					
+					lista3.recorrer();
+					
+
+				}
+			}
+			
+		}
+		
+		public void ordenarPolinomio() {
+			if (inicio == null) {
+				System.out.println("no hay datos");
+			}else{
+				nodo aux = inicio;
+				nodo aux2 = null;
+				Integer auxCoeficiente = 0;
+				Integer auxExponente = 0;
+
+				while (aux != null) {
+					aux2 = aux.getSiguiente();
+					while (aux2 != null) {
+
+						if (aux.getDato().getExponente() < aux2.getDato().getExponente()) {
+							auxCoeficiente = aux.getDato().getCoeficiente();
+							auxExponente = aux.getDato().getExponente();
+							aux.getDato().setCoeficiente(aux2.getDato().getCoeficiente());
+							aux.getDato().setExponente(aux2.getDato().getExponente());
+							aux2.getDato().setCoeficiente(auxCoeficiente);
+							aux2.getDato().setExponente(auxExponente);
+
+						}
+						aux2 = aux2.getSiguiente();
+					}
+					aux = aux.getSiguiente();
+				}	
+			}
+
+			
+
+		}
+		
+		public void divisionResiduo(lista lista1, lista lista2){
+			
+			
+			lista1.ordenarPolinomio();
+			lista2.ordenarPolinomio();
+			
+			lista lista3 = new lista();
+
+			nodo aux= lista1.getInicio();
+			nodo aux2= lista2.getInicio();
+
+			
+			nodo ant = null;
+			
+			while(aux2!=null){
+				if(aux2.getDato().getExponente()==0){
+					Integer comodin= aux2.getDato().getCoeficiente() * -1 ;
+					aux2.getDato().setCoeficiente(comodin);
+					aux2= aux2.getSiguiente();
+					
+				}else{
+					aux2= aux2.getSiguiente();
+				}
+			}
+
+			
+			nodo aux5= lista2.getInicio();
+			while(aux5.getSiguiente()!=null){
+				aux5=aux5.getSiguiente();
+			}
+			
+			nodo ultimo= aux5;
+		
+			
+				Integer comodin2 = aux.getDato().getCoeficiente();
+				
+				Integer comodin3 = aux.getDato().getExponente() -1; 
+				
+				monomio monomioaux = new monomio();			
+				
+				monomioaux.setCoeficiente(comodin2);
+				monomioaux.setExponente(comodin3);
+		
+				Integer coeficiente= monomioaux.getCoeficiente();
+				Integer exponente= monomioaux.getExponente();
+		
+				lista3.insertar(coeficiente, exponente);
+				aux= aux.getSiguiente();
+				
+				ant= lista1.getInicio();
+				
+				nodo auxiliar = lista3.getInicio();
+				
+				while(aux!=null){
+
+						
+						Integer comodin4 = ((aux.getDato().getCoeficiente()) + (auxiliar.getDato().getCoeficiente()* ultimo.getDato().getCoeficiente()));
+						
+						Integer comodin5 = aux.getDato().getExponente() -1; 
+						
+						monomio monomioaux1 = new monomio();			
+						
+						monomioaux1.setCoeficiente(comodin4);
+						monomioaux1.setExponente(comodin5);
+				
+						Integer coeficiente1= monomioaux1.getCoeficiente();
+						Integer exponente1= monomioaux1.getExponente();
+				
+						lista3.insertar(coeficiente1, exponente1);
+						aux= aux.getSiguiente();
+						auxiliar = auxiliar.getSiguiente();	
+				}
+				
+				nodo auxi= lista3.getInicio();
+				nodo ante=null;
+				while(auxi.getSiguiente()!=null){
+					    ante= auxi;
+						auxi= auxi.getSiguiente();
+						
+				}
+				ante.setSiguiente(null);
+				
+			lista3.recorrer();
+			System.out.println("Residuo=" + auxi.getDato().getCoeficiente());
+		}
+		
+		
+		
+		public void division(lista lista1, lista lista2){
+			
+			lista lista3= new lista();
+			lista lista4= new lista();
+			
+			lista1.ordenarPolinomio();
+			lista2.ordenarPolinomio();
+			
+			nodo aux= lista1.getInicio();
+			nodo aux2= lista2.getInicio();
+			nodo aux3= lista3.getInicio();
+			nodo aux4= lista4.getInicio();
+			
+			
+			
+			if(isListavacia1(lista1)){
+				System.out.println("NO ENTRA");
+				System.out.println("no hay primer polinomio");
+			}else{
+					if(isListavacia2(lista2)){
+					System.out.println("NO ENTRA 2");
+					System.out.println("no hay segundo polinomio");
+					}else{
+						  while(aux.getDato().getExponente() >= aux2.getDato().getExponente()){
+							 	  
+									monomio monomioaux = new monomio();			
+									
+									monomioaux.setCoeficiente(aux.getDato().getCoeficiente() / aux2.getDato().getCoeficiente());
+									monomioaux.setExponente(aux.getDato().getExponente() - aux2.getDato().getExponente());
+							
+									Integer coeficiente= monomioaux.getCoeficiente();
+									Integer exponente= monomioaux.getExponente();
+							
+									lista3.insertar(coeficiente, exponente);
+									
+									lista4= null;
+									
+									while(aux2!=null){
+										monomio monomioaux1= new monomio();
+										
+										monomioaux1.setCoeficiente(aux2.getDato().getCoeficiente()* coeficiente);
+										monomioaux1.setExponente(aux2.getDato().getExponente() + exponente);
+										
+										Integer coeficiente1= monomioaux1.getCoeficiente();
+										Integer exponente1= monomioaux1.getExponente();
+								
+										lista4.insertar(coeficiente1, exponente1);
+										aux2= aux2.getSiguiente();
+									}
+									
+									lista4.ordenarPolinomio();
+									
+									while(aux!=null){
+										Integer comodin = null;
+										
+										aux4=lista4.getInicio();
+										
+										while(aux4!=null){
+											if(aux.getDato().getExponente()== aux4.getDato().getExponente()){
+												
+												comodin= aux.getDato().getCoeficiente() - aux4.getDato().getCoeficiente();
+												
+												aux.getDato().setCoeficiente(comodin);
+												
+												aux4= aux4.getSiguiente();
+											}else{
+												aux4= aux4.getSiguiente();
+											}
+										}
+										
+										aux= aux.getSiguiente();
+									}
+									
+									aux= lista1.getInicio();
+									 aux2=lista2.getInicio();
+										
+									
+									if(aux.getDato().getCoeficiente()==0){
+										inicio=aux.getSiguiente();
+										aux.setSiguiente(null);
+										aux=inicio;
+									}					
+						  }
+					}
+			}
+		}
+		
+		
+		public nodo getInicio() {
+			return inicio;
+		}
+
+		public void setInicio(nodo inicio) {
+			this.inicio = inicio;
+		}
+}

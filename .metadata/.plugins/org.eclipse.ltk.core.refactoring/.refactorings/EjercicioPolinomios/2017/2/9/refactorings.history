@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;divisionResiduoTest&apos; to &apos;divisionRuffiniTest&apos;&#x0D;&#x0A;- Original project: &apos;EjercicioPolinomios&apos;&#x0D;&#x0A;- Original element: &apos;divisionResiduoTest&apos;&#x0D;&#x0A;- Renamed element: &apos;divisionRuffiniTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;divisionResiduoTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{divisionResiduoTest.java[divisionResiduoTest" matchStrategy="1" name="divisionRuffiniTest" qualified="false" references="true" similarDeclarations="false" stamp="1488074628963" textual="false" version="1.0"/>
+</session>
