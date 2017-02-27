@@ -1,0 +1,4 @@
+
+class ListaVaciaException extends Exception {
+    
+}
