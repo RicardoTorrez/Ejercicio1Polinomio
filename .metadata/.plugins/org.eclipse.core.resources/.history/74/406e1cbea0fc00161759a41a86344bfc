@@ -72,15 +72,5 @@ public class Metodos {
 		tiempo= Tfin-Tinicio;
 		System.out.println("Tiempo de ejecucion en milisegundos" + tiempo);
 	}
-	
-	public static void Shell() {
-		
-		System.out.println("");
-		System.out.print("Shell");
-		
-		
-	}
-
-	
 
 }

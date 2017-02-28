@@ -175,7 +175,7 @@ public class Test {
 		System.out.println("Lista Desordenada");
 		
 		lista1.recorrer();
-		lista1.ordenarPolinomio();
+		lista1.ordenarPolinomioBurbuja();
 		lista1.recorrer();
 		
 
