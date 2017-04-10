@@ -1,4 +1,8 @@
 INDEX VERSION 1.127+C:\Users\torre_000\Desktop\Ejercicio1Polinomio\.metadata\.plugins\org.eclipse.jdt.core
+1982432540.index
 3816032274.index
-4289400563.index
 909675737.index
+1780529046.index
+2992514243.index
+744180814.index
+4289400563.index

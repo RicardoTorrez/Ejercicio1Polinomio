@@ -1,0 +1,14 @@
+
+public class Cmatrices {
+
+	public double Determinante(int i, double [][] matriz){
+		if(matriz.length==2){
+			double deter= (matriz[0][0] * matriz[1][1]) - (matriz[0][1] * matriz[1][0]);
+			return deter;
+		}
+		else{
+			double deter=0;
+		}
+		return i;
+	}
+}

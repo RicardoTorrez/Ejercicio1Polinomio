@@ -1,0 +1,20 @@
+
+public class Cmatrices {
+
+	public double Determinante(int i, double [][] matriz){
+		if(matriz.length==2){
+			double deter= (matriz[0][0] * matriz[1][1]) - (matriz[0][1] * matriz[1][0]);
+			return deter;
+		}
+		else{
+			double deter=0;
+			
+			for(int j=0; j<matriz.length; j++){
+				double[][] temp = this.SubMatriz(i,j,matriz);
+				
+				deter= deter + Math.pow(-1, i+j) * matriz[i][j] * this.Determinante(i, temp);
+			}
+		}
+		return i;
+	}
+}
