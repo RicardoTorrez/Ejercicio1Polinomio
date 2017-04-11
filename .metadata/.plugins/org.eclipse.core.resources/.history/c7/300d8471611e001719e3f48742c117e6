@@ -26,7 +26,7 @@ public class ServidorTCP {
 	private static String palabraEnProgreso = "?";
 	private static int nroIntentos = 6;
 	//PALABRAS EN EL SERVIDOR
-	static private final String[] palabrasAhorcado = {"moñoñongo", "cubeta", "Estructuras", "Karim", "Diana", "Luis", "Odiame mas", "El mas grande","internet", "router", "wifi", "estandar", "socket", "transporte","enlace", "capas", "LAN", "WAN", "MAN",};
+	static private final String[] palabrasAhorcado = {"moñoñongo", "cubeta", "Estructuras", "Karin", "Diana", "Luis", "Odiame mas", "El mas grande","internet", "router", "wifi", "estandar", "socket", "transporte","enlace", "capas", "LAN", "WAN", "MAN",};
 	private static int nroMensaje = 0;
 	public static void main(String[] args) throws IOException {
 		ServerSocket socketDeServicio = null;

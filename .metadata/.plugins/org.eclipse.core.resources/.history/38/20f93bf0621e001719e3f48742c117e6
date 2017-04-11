@@ -28,11 +28,17 @@ private static Integer nroMensaje = 0;
 
 public static void main(String[] args) {
 	try {
+		System.out.println("1");
 		conexion = new Socket("192.168.1.67", 6112);
+		System.out.println("2");
 		BufferedReader entradaUsuario = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("3");
 		System.out.println("iniciando Conexion con el servidor...");
+		System.out.println("4");
 		in = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+		System.out.println("5");
 		out = new DataOutputStream(conexion.getOutputStream());
+		System.out.println("6");
 		System.out.println("conexion realizada...");
 		boolean jugando = true;
 		while (jugando == true) {

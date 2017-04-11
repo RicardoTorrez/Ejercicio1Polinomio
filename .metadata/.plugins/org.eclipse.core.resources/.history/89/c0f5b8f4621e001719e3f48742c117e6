@@ -29,10 +29,15 @@ private static Integer nroMensaje = 0;
 public static void main(String[] args) {
 	try {
 		conexion = new Socket("192.168.1.67", 6112);
+		
 		BufferedReader entradaUsuario = new BufferedReader(new InputStreamReader(System.in));
+		
 		System.out.println("iniciando Conexion con el servidor...");
+		
 		in = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+		
 		out = new DataOutputStream(conexion.getOutputStream());
+		
 		System.out.println("conexion realizada...");
 		boolean jugando = true;
 		while (jugando == true) {
