@@ -1,0 +1,44 @@
+
+public class Arbol {
+	private Nodo raiz;
+	Nodo aux= raiz;
+	Nodo ant=null;
+	
+	public Arbol(){
+		raiz=null;
+	}
+	
+	public void insertar(Integer elemento){
+		Nodo nuevo= new Nodo(elemento);
+		if(raiz==null){
+			raiz=nuevo;
+		} else {
+			while(aux != null){
+				if(nuevo.getDato()<aux.getDato()){
+					ant= aux;
+					aux = ant.getIzq();
+				}else{
+					ant = aux;
+					aux= ant.getDer();
+				}
+			}
+			if(nuevo.getDato()<ant.getDato()){
+				ant.setIzq(nuevo);
+			} else {
+				ant.setDer(nuevo);
+			}
+			
+		}
+	}
+	
+    public void imprimirPre (Nodo reco)
+    {
+        if (reco != null)
+        {
+            System.out.print(reco.getDato() + " ");
+            imprimirPre (reco.getIzq());
+            imprimirPre (reco.getDer());
+        }
+    }
+
+}
