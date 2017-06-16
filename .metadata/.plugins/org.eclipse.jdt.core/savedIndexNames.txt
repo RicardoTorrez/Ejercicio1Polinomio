@@ -2,6 +2,7 @@ INDEX VERSION 1.127+C:\Users\torre_000\Desktop\Ejercicio1Polinomio\.metadata\.pl
 2675155685.index
 3552683455.index
 2992514243.index
+265248386.index
 3637698694.index
 3816032274.index
 744180814.index

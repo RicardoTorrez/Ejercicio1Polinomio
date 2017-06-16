@@ -1,0 +1,12 @@
+La Matriz de Caminos Mas Cortos Entre los Diferentes Vertices es: 
+[0][2][6]
+[100000000][0][4]
+[100000000][100000000][0]
+ 
+ Los Diferentes Caminos Mas Cortos entre Vertices Son: 
+De (1----->2) Irse Por..(1,2) 
+De (1----->3) Irse Por..(1,2,3) 
+De (2----->1) Irse Por..(2,3,1) 
+De (2----->3) Irse Por..(2,3) 
+De (3----->1) Irse Por..(3,1) 
+De (3----->2) Irse Por..(3,1,2) 
