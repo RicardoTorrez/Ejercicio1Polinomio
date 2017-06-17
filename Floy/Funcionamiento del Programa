@@ -1,0 +1,5 @@
+Ejecución del Programa
+El usuario deberá escoger el tamaño de la matriz de pesos de los nodos
+El usuario ingresa los pesos de las matrices, donde el infinito se representa con un numero muy exagerado se recomienda el siguiente numero: 999999999
+El programa retorna los caminos mas cortos entre ellos y lanza la matriz de caminos
+El programa guarda todos los datos en un archivo llamado: resultado.txt
